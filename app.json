@@ -13,17 +13,40 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSSpeechRecognitionUsageDescription": "Sesli komut için konuşma tanıma gereklidir.",
+        "NSMicrophoneUsageDescription": "Sesli komut için mikrofon gereklidir."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.beyza.erdem.canbakimapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Sesli komut için mikrofon gereklidir.",
+          "speechRecognitionPermission": "Sesli komut için konuşma tanıma gereklidir."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "2f298816-9708-42ab-87ad-237da3a30383"
+      }
+    },
+    "owner": "beyza.erdem"
   }
 }
